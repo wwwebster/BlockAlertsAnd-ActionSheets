@@ -21,6 +21,6 @@
 - (IBAction)showTextPrompt:(id)sender;
 - (IBAction)showTableAlert:(id)sender;
 
-@property (retain, nonatomic) IBOutlet UITextField *testKeyboard;
+@property (strong, nonatomic) IBOutlet UITextField *testKeyboard;
 
 @end

@@ -31,7 +31,7 @@ typedef enum {
     NSMutableArray *selectedItems;
 }
 
-@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic) BlockTableAlertType type;
 
 @property (readwrite,copy)	TableAlertIndexBlock didSelectRow;
@@ -42,7 +42,7 @@ typedef enum {
 
 @property (nonatomic, assign) NSInteger maxSelection;
 
-@property (nonatomic, readonly) NSArray* indexPathsForSelectedRows;
+@property (weak, nonatomic, readonly) NSArray* indexPathsForSelectedRows;
 
 - (void)selectRowAtIndexPath:(NSIndexPath*)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scroll;
 

@@ -47,24 +47,7 @@ static BlockBackground *_sharedInstance = nil;
     return self;
 }
 
-- (id)retain
-{
-    return self;
-}
 
-- (unsigned)retainCount
-{
-    return UINT_MAX;
-}
-
-- (oneway void)release
-{
-}
-
-- (id)autorelease
-{
-    return self;
-}
 
 - (void)setRotation:(NSNotification*)notification
 {
@@ -144,7 +127,7 @@ static BlockBackground *_sharedInstance = nil;
 
     if (self.hidden)
     {
-        _previousKeyWindow = [[[UIApplication sharedApplication] keyWindow] retain];
+        _previousKeyWindow = [[UIApplication sharedApplication] keyWindow];
         self.alpha = 0.0f;
         self.hidden = NO;
         [self makeKeyWindow];
@@ -164,8 +147,6 @@ static BlockBackground *_sharedInstance = nil;
         backgroundView.frame = self.bounds;
         backgroundView.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:backgroundView];
-        [backgroundView release];
-        [_backgroundImage release];
         _backgroundImage = nil;
     }
     
@@ -196,7 +177,6 @@ static BlockBackground *_sharedInstance = nil;
     {
         self.hidden = YES;
         [_previousKeyWindow makeKeyWindow];
-        [_previousKeyWindow release];
         _previousKeyWindow = nil;
     }
     else

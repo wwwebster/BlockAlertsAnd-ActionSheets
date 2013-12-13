@@ -21,7 +21,7 @@ typedef BOOL(^TextFieldReturnCallBack)(BlockTextPromptAlertView *);
     NSString* defaultText;
 }
 
-@property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, strong) UITextField *textField;
 
 @property (nonatomic, assign) BOOL disableAutoBecomeFirstResponder;
 @property (nonatomic, assign) BOOL selectAllOnBeginEdit;

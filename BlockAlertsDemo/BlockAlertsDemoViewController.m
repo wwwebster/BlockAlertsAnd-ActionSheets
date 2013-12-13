@@ -146,11 +146,6 @@
     [self.testKeyboard resignFirstResponder];
 }
 
-- (void)dealloc
-{
-    [testKeyboard release];
-    [super dealloc];
-}
 
 - (void)viewDidUnload
 {

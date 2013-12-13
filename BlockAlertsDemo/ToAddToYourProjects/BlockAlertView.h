@@ -37,7 +37,7 @@
 
 - (void)setupDisplay;
 
-@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, strong) UIImage *backgroundImage;
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic, readwrite) BOOL vignetteBackground;
 
