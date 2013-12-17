@@ -16,6 +16,13 @@
     BOOL _cancelBounce;
 }
 
+@property (nonatomic, strong) UIImage *backgroundImage;
+@property (nonatomic, readonly) UIView *view;
+@property (nonatomic, readwrite) BOOL vignetteBackground;
+
+//Converting to ARC, [self retain] and [self autorelease] used in showInView: and dismissWithClickedButtonIndex:animated: were removed. Though the design is questionable in the first place. This property is a replacement for the old technique.
+@property (nonatomic, strong) BlockAlertView* selfReference;
+
 + (BlockAlertView *)alertWithTitle:(NSString *)title message:(NSString *)message;
 
 + (void)showInfoAlertWithTitle:(NSString *)title message:(NSString *)message;
@@ -23,12 +30,15 @@
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message;
 
-- (void)setDestructiveButtonWithTitle:(NSString *)title block:(void (^)())block;
-- (void)setCancelButtonWithTitle:(NSString *)title block:(void (^)())block;
-- (void)addButtonWithTitle:(NSString *)title block:(void (^)())block;
+- (void)addButtonWithTitle:(NSString *)title
+               normalImage:(NSString*)normalImage
+                     block:(void (^)())block;
 
-// Images should be named in the form "alert-IDENTIFIER-button.png"
-- (void)addButtonWithTitle:(NSString *)title imageIdentifier:(NSString*)identifier block:(void (^)())block;
+- (void)addButtonWithTitle:(NSString *)title
+               normalImage:(NSString*)normalImage
+             selectedImage:(NSString*) selectedImage
+             disabledImage:(NSString*) disabledImage
+                     block:(void (^)())block;
 
 - (void)addComponents:(CGRect)frame;
 
@@ -37,8 +47,5 @@
 
 - (void)setupDisplay;
 
-@property (nonatomic, strong) UIImage *backgroundImage;
-@property (nonatomic, readonly) UIView *view;
-@property (nonatomic, readwrite) BOOL vignetteBackground;
 
 @end

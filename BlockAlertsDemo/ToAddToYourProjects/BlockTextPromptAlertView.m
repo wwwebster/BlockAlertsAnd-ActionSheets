@@ -51,7 +51,7 @@
         UITextField *theTextField = [[UITextField alloc] initWithFrame:CGRectMake(kTextBoxHorizontalMargin, _height, frame.size.width - kTextBoxHorizontalMargin * 2, kTextBoxHeight)];
         
         [theTextField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-        [theTextField setAutocapitalizationType:UITextAutocapitalizationTypeWords];
+        [theTextField setAutocapitalizationType:UITextAutocapitalizationTypeSentences];
         [theTextField setBorderStyle:UITextBorderStyleRoundedRect];
         [theTextField setTextAlignment:NSTextAlignmentCenter];
         [theTextField setClearButtonMode:UITextFieldViewModeAlways];

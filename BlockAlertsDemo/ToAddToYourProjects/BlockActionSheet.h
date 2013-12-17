@@ -18,17 +18,21 @@
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic, readwrite) BOOL vignetteBackground;
 
-+ (id)sheetWithTitle:(NSString *)title;
+//Converting to ARC, [self retain] and [self autorelease] used in showInView: and dismissWithClickedButtonIndex:animated: were removed. Though the design is questionable in the first place, this property is a replacement for the old technique.
+@property (nonatomic, strong) BlockActionSheet* selfReference;
 
++ (id)sheetWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title;
 
-- (void)setCancelButtonWithTitle:(NSString *) title block:(void (^)()) block;
-- (void)setDestructiveButtonWithTitle:(NSString *) title block:(void (^)()) block;
-- (void)addButtonWithTitle:(NSString *) title block:(void (^)()) block;
+- (void)addButtonWithTitle:(NSString *)title
+               normalImage:(NSString*)normalImage
+                     block:(void (^)())block;
 
-- (void)setCancelButtonWithTitle:(NSString *) title atIndex:(NSInteger)index block:(void (^)()) block;
-- (void)setDestructiveButtonWithTitle:(NSString *) title atIndex:(NSInteger)index block:(void (^)()) block;
-- (void)addButtonWithTitle:(NSString *) title atIndex:(NSInteger)index block:(void (^)()) block;
+- (void)addButtonWithTitle:(NSString *)title
+               normalImage:(NSString*)normalImage
+             selectedImage:(NSString*) selectedImage
+             disabledImage:(NSString*) disabledImage
+                     block:(void (^)())block;
 
 - (void)showInView:(UIView *)view;
 

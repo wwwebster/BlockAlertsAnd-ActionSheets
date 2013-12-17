@@ -24,30 +24,36 @@
 
 - (IBAction)showAlert:(id)sender
 {
-    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Alert Title" message:@"This is a very long message, designed just to show you how smart this class is"];
-    
-    [alert setCancelButtonWithTitle:@"Cancel" block:nil];
-    [alert setDestructiveButtonWithTitle:@"Kill!" block:nil];
-    [alert addButtonWithTitle:@"Show Action Sheet on top" imageIdentifier:@"yellow" block:^{
-        [self showActionSheet:nil];
-    }];
-    [alert addButtonWithTitle:@"Show another alert" imageIdentifier:@"green" block:^{
-        [self showAlert:nil];
-    }];
+    BlockAlertView *alert = [BlockAlertView alertWithTitle:@"Single" message:@"A single button will stay small unless it has a lot of text"];
+    [alert addButtonWithTitle:@"This button has lots of text" normalImage:@"alert-red-button.png" block:nil];
+
+//    [alert addButtonWithTitle:@"Cancel" imageIdentifier:@"red" block:nil];
+//    [alert addButtonWithTitle:@"Kill!" imageIdentifier:@"" block:nil];
+//
+//    [alert addButtonWithTitle:@"Show Action Sheet on top" imageIdentifier:@"yellow" block:^{
+//        [self showActionSheet:nil];
+//    }];
+//    [alert addButtonWithTitle:@"Show another alert" imageIdentifier:@"green" block:^{
+//        [self showAlert:nil];
+//    }];
     [alert show];
 }
 
 - (IBAction)showActionSheet:(id)sender
 {
     BlockActionSheet *sheet = [BlockActionSheet sheetWithTitle:@"This is a sheet title that will span more than one line"];
-    [sheet setCancelButtonWithTitle:@"Cancel Button" block:nil];
-    [sheet setDestructiveButtonWithTitle:@"Destructive Button" block:nil];
-    [sheet addButtonWithTitle:@"Show Action Sheet on top" block:^{
-        [self showActionSheet:nil];
-    }];
-    [sheet addButtonWithTitle:@"Show another alert" block:^{
-        [self showAlert:nil];
-    }];
+    [sheet addButtonWithTitle:@"Close" normalImage:@"alert-gray-button.png" block:nil];
+    [sheet addButtonWithTitle:@"Red" normalImage:@"alert-red-button.png" block:nil];
+    [sheet addButtonWithTitle:@"Green" normalImage:@"alert-green-button.png" block:nil];
+    [sheet addButtonWithTitle:@"Yellow" normalImage:@"alert-yellow-button.png" block:nil];
+//    [sheet setCancelButtonWithTitle:@"Cancel Button" block:nil];
+//    [sheet setDestructiveButtonWithTitle:@"Destructive Button" block:nil];
+//    [sheet addButtonWithTitle:@"Show Action Sheet on top" block:^{
+//        [self showActionSheet:nil];
+//    }];
+//    [sheet addButtonWithTitle:@"Show another alert" block:^{
+//        [self showAlert:nil];
+//    }];
     [sheet showInView:self.view];
 }
 
@@ -90,12 +96,16 @@
         [alert.textField resignFirstResponder];
         return YES;
     }];
+    [alert addButtonWithTitle:@"Cancel" normalImage:@"alert-red-button.png" block:nil];
+    [alert addButtonWithTitle:@"Okay" normalImage:@"alert-gray-button.png" block:
+     ^{
+         NSLog(@"Text: %@", textField.text);
+     }];
     
-    
-    [alert setCancelButtonWithTitle:@"Cancel" block:nil];
-    [alert addButtonWithTitle:@"Okay" block:^{
-        NSLog(@"Text: %@", textField.text);
-    }];
+//    [alert setCancelButtonWithTitle:@"Cancel" block:nil];
+//    [alert addButtonWithTitle:@"Okay" block:^{
+//        NSLog(@"Text: %@", textField.text);
+//    }];
     [alert show];
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A43D2D4185F13F8005F020C /* alert-window-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A43D2D2185F13F8005F020C /* alert-window-landscape.png */; };
+		2A43D2D5185F13F8005F020C /* alert-window-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A43D2D3185F13F8005F020C /* alert-window-landscape@2x.png */; };
+		2A940302185B367A00EA9A2B /* BlockUI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A940301185B367A00EA9A2B /* BlockUI.plist */; };
 		B5422F0B1705EB6200CF13D7 /* BlockTableAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5422F0A1705EB6200CF13D7 /* BlockTableAlertView.m */; };
 		B583D771175E3C31002A35C0 /* alert-green-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B583D76F175E3C31002A35C0 /* alert-green-button.png */; };
 		B583D772175E3C31002A35C0 /* alert-green-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B583D770175E3C31002A35C0 /* alert-green-button@2x.png */; };
@@ -55,6 +58,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A43D267185B7262005F020C /* BlockUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockUI.h; sourceTree = "<group>"; };
+		2A43D2D2185F13F8005F020C /* alert-window-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-window-landscape.png"; sourceTree = "<group>"; };
+		2A43D2D3185F13F8005F020C /* alert-window-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-window-landscape@2x.png"; sourceTree = "<group>"; };
+		2A940301185B367A00EA9A2B /* BlockUI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlockUI.plist; sourceTree = "<group>"; };
 		B5422F091705EB6200CF13D7 /* BlockTableAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTableAlertView.h; sourceTree = "<group>"; };
 		B5422F0A1705EB6200CF13D7 /* BlockTableAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTableAlertView.m; sourceTree = "<group>"; };
 		B583D76F175E3C31002A35C0 /* alert-green-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-green-button.png"; sourceTree = "<group>"; };
@@ -102,7 +109,7 @@
 		ECAF5FFF14BE67BB0095B359 /* button_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_grey@2x.png"; sourceTree = "<group>"; };
 		ECAF600014BE67BB0095B359 /* button_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_red.png; sourceTree = "<group>"; };
 		ECAF600114BE67BB0095B359 /* button_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_red@2x.png"; sourceTree = "<group>"; };
-		ECFC5EF414EB1DA4004BFD45 /* BlockUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockUI.h; sourceTree = "<group>"; };
+		ECFC5EF414EB1DA4004BFD45 /* BlockUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockUI.h; path = ../ProjectSpecific/BlockUI.h; sourceTree = "<group>"; };
 		ECFC5EF614EB1DA4004BFD45 /* BlockActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockActionSheet.h; sourceTree = "<group>"; };
 		ECFC5EF714EB1DA4004BFD45 /* BlockActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockActionSheet.m; sourceTree = "<group>"; };
 		ECFC5EF814EB1DA4004BFD45 /* BlockAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockAlertView.h; sourceTree = "<group>"; };
@@ -232,6 +239,8 @@
 				EC9016E514BB679C00EF52E1 /* alert-red-button@2x.png */,
 				EC9016E614BB679C00EF52E1 /* alert-window.png */,
 				EC9016E714BB679C00EF52E1 /* alert-window@2x.png */,
+				2A43D2D2185F13F8005F020C /* alert-window-landscape.png */,
+				2A43D2D3185F13F8005F020C /* alert-window-landscape@2x.png */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -239,7 +248,7 @@
 		ECFC5EF314EB1DA4004BFD45 /* ProjectSpecific */ = {
 			isa = PBXGroup;
 			children = (
-				ECFC5EF414EB1DA4004BFD45 /* BlockUI.h */,
+				2A940301185B367A00EA9A2B /* BlockUI.plist */,
 			);
 			path = ProjectSpecific;
 			sourceTree = "<group>";
@@ -247,6 +256,8 @@
 		ECFC5EF514EB1DA4004BFD45 /* ToAddToYourProjects */ = {
 			isa = PBXGroup;
 			children = (
+				ECFC5EF414EB1DA4004BFD45 /* BlockUI.h */,
+				2A43D267185B7262005F020C /* BlockUI.h */,
 				ECFC5EF614EB1DA4004BFD45 /* BlockActionSheet.h */,
 				ECFC5EF714EB1DA4004BFD45 /* BlockActionSheet.m */,
 				ECFC5EF814EB1DA4004BFD45 /* BlockAlertView.h */,
@@ -314,6 +325,7 @@
 			files = (
 				EC9016A914BB629F00EF52E1 /* InfoPlist.strings in Resources */,
 				EC9016B514BB629F00EF52E1 /* BlockAlertsDemoViewController.xib in Resources */,
+				2A43D2D4185F13F8005F020C /* alert-window-landscape.png in Resources */,
 				EC9016E814BB679C00EF52E1 /* action-black-button-selected.png in Resources */,
 				EC9016E914BB679C00EF52E1 /* action-black-button-selected@2x.png in Resources */,
 				EC9016EA14BB679C00EF52E1 /* action-black-button.png in Resources */,
@@ -322,6 +334,7 @@
 				EC9016ED14BB679C00EF52E1 /* action-gray-button-selected@2x.png in Resources */,
 				EC9016EE14BB679C00EF52E1 /* action-gray-button.png in Resources */,
 				EC9016EF14BB679C00EF52E1 /* action-gray-button@2x.png in Resources */,
+				2A940302185B367A00EA9A2B /* BlockUI.plist in Resources */,
 				EC9016F014BB679C00EF52E1 /* action-red-button-selected.png in Resources */,
 				EC9016F114BB679C00EF52E1 /* action-red-button-selected@2x.png in Resources */,
 				EC9016F214BB679C00EF52E1 /* action-red-button.png in Resources */,
@@ -330,6 +343,7 @@
 				EC9016F514BB679C00EF52E1 /* action-sheet-panel@2x.png in Resources */,
 				EC9016F614BB679C00EF52E1 /* alert-black-button.png in Resources */,
 				EC9016F714BB679C00EF52E1 /* alert-black-button@2x.png in Resources */,
+				2A43D2D5185F13F8005F020C /* alert-window-landscape@2x.png in Resources */,
 				EC9016F814BB679C00EF52E1 /* alert-gray-button.png in Resources */,
 				EC9016F914BB679C00EF52E1 /* alert-gray-button@2x.png in Resources */,
 				EC9016FA14BB679C00EF52E1 /* alert-red-button.png in Resources */,
